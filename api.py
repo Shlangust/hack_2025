@@ -1,5 +1,5 @@
 from fastapi import FastAPI, UploadFile, File
-# from main import read
+from main import read
 # import io
 from typing import Annotated
 
@@ -13,4 +13,4 @@ async def create_file(file: Annotated[bytes | None, File()] = None):
     #     return {"message": "No file sent"}
     # else:
     #     return {"file_size": len(file)}
-    return 0
+    return read(file)
